@@ -27,18 +27,20 @@
 // is typically COMP_NAME + _Lc
 
 void doImageInit(){
-	PRINT_LN("test app: %u",blink_Lc.id);
-	//instantiating component
-	uint8_t cbid = 0 ;
-	looci_cbMan_instantiate_codebase(temp_sample_Lc.id,&cbid);
-	uint8_t success = looci_cbMan_instantiate_codebase(cbid);
-	PRINT_LN("instantiated sample as: %u",cbid);
+	// PRINT_LN("test app: %u",blink_Lc.id);
+	// //instantiating component
+	// uint8_t cbid = 0 ;
+	// looci_cbMan_instantiate_codebase(temp_sample_Lc.id,&cbid);
+	// uint8_t success = looci_cbMan_instantiate_codebase(cbid);
+	// PRINT_LN("instantiated sample as: %u",cbid);
 
-	//do activation
-	success = looci_cmpMan_component_start(cbid);
-	PRINT_LN("succes = %u",success);
+	// //do activation
+	// success = looci_cmpMan_component_start(cbid);
+	// PRINT_LN("succes = %u",success);
 
-
+	uint8_t	cbid	=	0	;
+	looci_cbMan_instan8ate_codebase(temp_sample_Lc.id,&cbid);
+	PRINT_LN("instantiated	sample	as:	%u",cbid);
 
 	// do subscription, appended some example code:
 	/* WireToAll

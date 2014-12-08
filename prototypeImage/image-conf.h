@@ -13,7 +13,7 @@
  * Add here the headers of the component, where the component name is declared
  * In case of multiple components, add the header for each component
  */
-#include "blink.h"
+#include "prototype.h"
 //#include "myComponentHeader1.h"
 //#include "myComponentHeader2.h"
 
