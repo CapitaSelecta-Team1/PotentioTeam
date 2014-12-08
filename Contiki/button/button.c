@@ -9,6 +9,7 @@ PROCESS_THREAD(hello_world_process, ev, data)
 	PROCESS_BEGIN();
 
     printf("Hello, world!\n");
+    DDRD = 0x00;
 
 	while(1)
   	{
