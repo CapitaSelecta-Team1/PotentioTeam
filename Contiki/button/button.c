@@ -13,8 +13,8 @@ PROCESS_THREAD(hello_world_process, ev, data)
     //Enable all external interupts 
     // INT0 used for the button
     EIMSK = 0xff;
-    //Enable listening to all interupts (on any edge)
-    EICRA = 0xff;
+    //Enable listening to all interupts (on rising edge)
+    EICRA = 0x03;
 
 	while(1)
   	{
