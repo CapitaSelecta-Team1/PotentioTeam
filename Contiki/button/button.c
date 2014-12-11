@@ -1,5 +1,10 @@
 #include "contiki.h"
 #include <stdio.h>
+#include "adc.h"
+#define LOW_1 0
+#define LOW_2 267
+#define LOW_3 577 
+#define LOW_4 841 
 
 PROCESS(hello_world_process, "Hello world process");
 AUTOSTART_PROCESSES(&hello_world_process);
@@ -26,5 +31,6 @@ PROCESS_THREAD(hello_world_process, ev, data)
 
 ISR(INT0_vect)
 {
-    printf("Hello, interrupt!\n");
+    int p = readADC(0);
+    printf("Hello ADC=%d\n",p);
 }
