@@ -32,3 +32,10 @@
 .DS_Store
 ._*
 
+# AVR Zigduino
+*.avr-zigduino
+*.a
+*.map
+obj_avr-zigduino
+symbols.*
+

@@ -9,7 +9,12 @@ PROCESS_THREAD(hello_world_process, ev, data)
 	PROCESS_BEGIN();
 
     printf("Hello, world!\n");
-    DDRD = 0x00;
+
+    //Enable all external interupts 
+    // INT0 used for the button
+    EIMSK = 0xff;
+    //Enable listening to all interupts (on any edge)
+    EICRA = 0xff;
 
 	while(1)
   	{
