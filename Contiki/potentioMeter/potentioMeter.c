@@ -1,6 +1,11 @@
 #include "contiki.h"
 #include <stdio.h>
 #include "adc.h"
+#define LOW_1 0
+#define LOW_2 267
+#define LOW_3 577 
+#define LOW_4 841 
+
 
 PROCESS(hello_world_process, "Hello world process");
 AUTOSTART_PROCESSES(&hello_world_process);
