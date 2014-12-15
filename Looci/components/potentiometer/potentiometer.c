@@ -25,6 +25,7 @@ COMPONENT_RECEPTACLES(BUTTON_READING);
 LOOCI_COMPONENT("Potentiometer Component", struct state);
 
 static uint8_t activate(struct state* compState, void* data){
+	PRINTF("Potentiometer component activated\r\n");
 	return 1;
 }
 

@@ -23,6 +23,8 @@ LOOCI_COMPONENT_INIT("Button Component", struct state, &initVar);
 
 static uint8_t activate(struct state* compState, void* data){
 
+	PRINTF("Button component activated\r\n");
+
 	//Enable all external interrupts
     EIMSK = 0xff;
 

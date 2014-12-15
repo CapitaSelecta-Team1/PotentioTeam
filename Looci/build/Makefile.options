@@ -1,0 +1,41 @@
+## This file sets the functional options of building the sensor node looci image
+## Please edit flags to customize image to your own preferences 
+
+# Enable math double library
+WITH_DOUBLE_SUPPORT=0
+
+# Enable RPL support
+# This can be used to avoid using radvd, then either compile avr-ravenUSB stick as RPL border router, or program a zigduino as border router
+# If zigduino border router, set this field on 1
+# if using raven usb stick, set on 0
+UIP_CONF_RPL=0
+
+## nodeId of node
+## if CUSTOM_NODE_MAC is undeclared, it will set the mac of this node to 0x02, 0x11, 0x22, 0xff, 0xfe, 0x33, 0x44, 0xMY_NODE_ID
+MY_NODE_ID=55
+
+## Custom node mac
+## will override MY_NODE_ID
+## Do not leave spaces between the numbers, this will cause problems during compilation!
+# CUSTOM_NODE_MAC=0x02,0x11,0x22,0xff,0xfe,0x33,0x44,0x55 
+
+## Define here the 802.15.4 wireless channel
+MY_CHANNEL = 23
+
+## Define the event port here. Default will be 5555
+# CONF_EVENT_PORT = 5555
+
+## Define the deploy port here. Default will be 9999
+# CONF_DEPLOY_PORT = 9999
+
+
+###########################################
+##COMPOSITION OPTIONS
+###########################################
+
+## add here a composition from the compositions folder
+IMG=potImage
+
+## add here a composition folder from anywhere in file system
+## Note that CPS MUST NOT BE DECLARED, because it will override this
+#IMAGE_DIR = /home/user/my/image/dir
