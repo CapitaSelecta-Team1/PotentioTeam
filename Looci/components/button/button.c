@@ -17,7 +17,6 @@ const static struct state initVar PROGMEM = {};
 #define LOOCI_COMPONENT_NAME button_component
 #define LOOCI_NR_PROPERTIES 0
 LOOCI_PROPERTIES();
-COMPONENT_INTERFACES();
 COMPONENT_NO_RECEPTACLES();
 LOOCI_COMPONENT_INIT("Button Component", struct state, &initVar);
 
