@@ -39,3 +39,6 @@
 obj_avr-zigduino
 symbols.*
 
+# MD
+.html
+
