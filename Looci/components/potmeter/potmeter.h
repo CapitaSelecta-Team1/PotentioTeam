@@ -3,6 +3,6 @@
 
 
 #include "component_pub.h"
-DECLARE_LOOCI_COMPONENT(temp_sample);
+DECLARE_LOOCI_COMPONENT(potmeter);
 
 #endif
