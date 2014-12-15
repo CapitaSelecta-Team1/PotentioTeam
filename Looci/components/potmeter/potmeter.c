@@ -41,9 +41,21 @@ COMPONENT_THREAD( ev, data)
 	COMPONENT_BEGIN(struct state,compState);
 	compState->pot = 0;
 
+    //Enable all external interupts
+    // INT0 used for the button
+    EIMSK = 0xff;
+    //Enable listening to all interupts (on rising edge)
+    EICRA = 0x03;
+
 	while(1) {
 		LOOCI_EVENT_RECEIVE(compState->event);
 	}
 
 	COMPONENT_END();
+}
+
+ISR(INT0_vect)
+{
+    int p = readADC(0);
+    printf("Hello ADC=%d\n",p);
 }
