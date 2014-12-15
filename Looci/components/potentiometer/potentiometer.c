@@ -39,7 +39,6 @@ static uint8_t event(struct state* compState, core_looci_event_t* event){
 }
 
 COMP_FUNCS_INIT
-COMP_FUNC_INIT(init)
 COMP_FUNC_ACTIVATE(activate)
 COMP_FUNC_EVENT(event)
 COMP_FUNCS_END(NULL)
