@@ -1,5 +1,6 @@
 #include "contiki.h"
 #include "looci.h"
+
 #include "utils.h"
 #include "timer_utils.h"
 #include <avr/pgmspace.h>
@@ -9,6 +10,9 @@
 
 #include <stdint.h>
 #include <stdio.h>
+
+#include "process.h"
+#include "event-types.h"
 
 #ifdef LOOCI_COMPONENT_DEBUG
 #include "debug.h"
