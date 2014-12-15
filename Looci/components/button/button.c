@@ -32,12 +32,6 @@ static uint8_t activate(struct state* compState, void* data){
 	return 1;
 }
 
-void ISR(INT0_vect)
-{
-    PRINTF("Button pressed\r\n");
-    PUBLISH_EVENT(INFO_STRING, "Button Pressed", 13);
-}
-
 //FUNCTION DECLARATION
 
 COMP_FUNCS_INIT
