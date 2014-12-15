@@ -1,0 +1,28 @@
+$(warning "Notify : building prototypeImage component image")
+
+## Please list here the amount of components
+## Copy this template for other applications
+## DO NOT FORGET reconfig__C
+## If needed you can remove reconfig__C, but this disables introspection and reconfiguration from this composition
+CFLAGS += -DMY_NR_COMPS=2
+
+## Add here the list of components, separated by a comma
+## each component name is appended with a __C. For example, if the components is declared as 'blink', add it here as blink__C
+CFLAGS += -DMY_COMPS=reconfig__C,prototype__C
+
+## add here the directories of where to components are located. Just add eac
+PROJECTDIRS += $(LOOCI_CONTIKI)/components/myComponents/prototype
+#PROJECTDIRS += $(LOOCI_CONTIKI)/components/examples/blink
+#PROJECTDIRS += $(LOOCI_CONTIKI)/components/examples/blink
+
+## add here the source files of the different components
+PROJECT_SOURCEFILES += prototype.c
+#PROJECT_SOURCEFILES += buzzerComponent.c
+#PROJECT_SOURCEFILES += buttonSensor.c
+
+
+## Define if the image-init file needs to be executed
+WITH_IMG_INIT=1
+
+## Header files do not have to be included here.
+## Please include header files in the app-conf.h file

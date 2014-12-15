@@ -27,3 +27,18 @@
 *.i*86
 *.x86_64
 *.hex
+
+# OSX
+.DS_Store
+._*
+
+# AVR Zigduino
+*.avr-zigduino
+*.a
+*.map
+obj_avr-zigduino
+symbols.*
+
+# MD
+.html
+
