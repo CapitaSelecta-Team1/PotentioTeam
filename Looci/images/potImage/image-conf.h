@@ -13,7 +13,8 @@
  * Add here the headers of the component, where the component name is declared
  * In case of multiple components, add the header for each component
  */
-#include "prototype.h"
+#include "button.h"
+#include "potentiometer.h"
 //#include "myComponentHeader1.h"
 //#include "myComponentHeader2.h"
 
