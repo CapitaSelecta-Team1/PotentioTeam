@@ -53,4 +53,7 @@ PRINT_LN("instantiated as: %u",cbid);
 | Button 2    | Black | Brown   | Red     |
 | Pot         | White | Yellow  | Green   |
 
+## Tools
 
+ - Use `contikiUpload.sh` to deploy a Contiki component.
+ - Use `loociUpload.sh` to deploy a Looci image.
