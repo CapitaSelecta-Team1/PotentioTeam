@@ -43,7 +43,7 @@ static uint8_t activate(struct state* compState, void* data){
 ISR(INT0_vect)
 {
     PRINTF("Button pressed\r\n");
-    // TODO: Send Event Signal!
+    // TODO: Send Event MakefileSignal!
 }
 
 //FUNCTION DECLARATION
