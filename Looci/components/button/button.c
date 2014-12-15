@@ -17,6 +17,7 @@ const static struct state initVar PROGMEM = {};
 #define LOOCI_COMPONENT_NAME button_component
 #define LOOCI_NR_PROPERTIES 0
 LOOCI_PROPERTIES();
+COMPONENT_INTERFACES(BUTTON_READING);
 COMPONENT_NO_RECEPTACLES();
 LOOCI_COMPONENT_INIT("Button Component", struct state, &initVar);
 
@@ -29,6 +30,12 @@ static uint8_t activate(struct state* compState, void* data){
     EICRA = 0x03;
 
 	return 1;
+}
+
+ISR(INT0_vect)
+{
+    PRINTF("Button pressed\r\n");
+	PUBLISH_EVENT(BUTTON_READING,NULL,0);
 }
 
 //FUNCTION DECLARATION
