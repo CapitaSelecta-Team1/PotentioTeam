@@ -1,8 +1,7 @@
-#ifndef BUTTON_COMPONENT_H_
-#define BUTTON_COMPONENT_H_
-
+#ifndef POTENTIOMETER_COMPONENT_H_
+#define POTENTIOMETER_COMPONENT_H_
 
 #include "component_pub.h"
-DECLARE_LOOCI_COMPONENT(button_component);
+DECLARE_LOOCI_COMPONENT(potentiometer_component);
 
 #endif
