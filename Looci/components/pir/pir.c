@@ -10,7 +10,7 @@
 
 struct state{struct etimer et;};
 
-static bool pressed;
+static bool movement_detected;
 
 #define LOOCI_COMPONENT_NAME pir_component
 #define LOOCI_NR_PROPERTIES 0
@@ -22,6 +22,12 @@ LOOCI_COMPONENT("Pir Component", struct state);
 static uint8_t activate(struct state* compState, void* data){
 
 	printf("Pir component activated\r\n");
+
+	//Enable all external interrupts
+    EIMSK = 0xff;
+
+    //Enable listening to all interrupts (on rising edge)
+    EICRA = 0x03;
 
     // Activate timer
     ETIMER_SET(&compState->et, CLOCK_SECOND);
@@ -36,11 +42,19 @@ static uint8_t deactivate(struct state* compState, void* data){
 
 static uint8_t time(struct state* compState, void* data){
 
-	// TODO PUBLISH DIGITAL VALUE
-	// PUBLISH_EVENT(PIR,true, sizeof(bool));
+	if(movement_detected){
+		printf("PIR component publishing event. \r\n");
+		PUBLISH_EVENT(PIR,true, sizeof(bool));
+		movement_detected = false;
+	}
 
 	ETIMER_RESET(&compState->et);
 	return 1;
+}
+
+ISR(INT0_vect)
+{
+    movement_detected = true;
 }
 
 COMP_FUNCS_INIT

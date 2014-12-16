@@ -16,7 +16,12 @@ PotentioTeam
 
 ## Documentations
 
+<<<<<<< HEAD
  - [Images](Docs/image.md)
+=======
+ - [Setup](Docs/setup.md)
+ - [Creating Images](Docs/image.md)
+>>>>>>> develop
  - [OSGI](Docs/osgi.md)
  - [Tools](Docs/tools.d)
  - [Wiring](Docs/wiring.md)

@@ -12,14 +12,12 @@
 struct state{
 };
 
-const static struct state initVar PROGMEM = {};
-
 #define LOOCI_COMPONENT_NAME relay_component
 #define LOOCI_NR_PROPERTIES 0
 LOOCI_PROPERTIES();
-COMPONENT_INTERFACES();
-COMPONENT_NO_RECEPTACLES(ALARM);
-LOOCI_COMPONENT_INIT("Relay Component", struct state, &initVar);
+COMPONENT_NO_INTERFACES();
+COMPONENT_RECEPTACLES(ALARM);
+LOOCI_COMPONENT("Relay Component", struct state);
 
 static uint8_t activate(struct state* compState, void* data){
 	printf("Relay component activated\r\n");
@@ -27,7 +25,9 @@ static uint8_t activate(struct state* compState, void* data){
 }
 
 static uint8_t event(struct state* compState, core_looci_event_t* event){
-	printf("event is happening\r\n");
+
+	printf("received alarm event\r\n");
+
 	DDRE |= 1 << PE7; //Output == 1 op pin 7 van categorie PE, input == 0
 	PORTE |= 1 << PE7; //High == 1, Low == 0
 

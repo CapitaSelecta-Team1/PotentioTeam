@@ -1,0 +1,6 @@
+getCodebaseIDs node55
+Instantiate 2 node55
+Instantiate 3 node55
+wirelocal 270 11 12 node55
+Activate 11 node55
+Activate 12 node55
