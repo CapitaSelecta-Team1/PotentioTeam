@@ -6,6 +6,7 @@ PotentioTeam
  - **Button Component**: triggers and event when the button connected to external interrupt vector 0 is pressed.
  - **Potentiometer Component**: triggers an event containing the current potentiometer value when the button component is triggered.
  - **Relay Component**: enables digital pin 7 when the relay event is triggered.
+<<<<<<< HEAD
 
 ## Images
 
@@ -14,6 +15,23 @@ PotentioTeam
 
 ### Image Creation
 
+=======
+
+## OSGI
+
+ - Check the code base on your node with `getCodebaseIDs nodeXY`. Check this number corresponds to your configuration.
+ - Instantiate each code base with `Instantiate codebaseid nodeXY` this returns an id.
+ - Wire components together on the node by event id and component id with `wirelocal event_id nodeid nodeid nodeXY`
+ - Activate the different components with `Activate id nodeXY'
+
+## Images
+
+ - **potImage**: image containing the potentiometer and button component.
+ - **relayImage**: image containing the relay component.
+
+### Image Creation
+
+>>>>>>> develop
 A custom image can be created as follows:
 
  1. Go to `looci2-contiki/cmp_image`

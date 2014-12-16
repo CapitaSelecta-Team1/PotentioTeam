@@ -1,6 +1,5 @@
 #include "contiki.h"
 #include "looci.h"
-#include "process.h"
 #include "event-types.h"
 #include "adc.h"
 
@@ -15,17 +14,19 @@
 #define LOW_3 577
 #define LOW_4 841
 
-struct state{};
+struct state{
+
+};
 
 #define LOOCI_COMPONENT_NAME potentiometer_component
 #define LOOCI_NR_PROPERTIES 0
 LOOCI_PROPERTIES();
-COMPONENT_NO_INTERFACES();
+COMPONENT_INTERFACES(POTENTIO);
 COMPONENT_RECEPTACLES(BUTTON_READING);
 LOOCI_COMPONENT("Potentiometer Component", struct state);
 
 static uint8_t activate(struct state* compState, void* data){
-	PRINTF("Potentiometer component activated\r\n");
+	printf("Potentiometer component activated\r\n");
 	return 1;
 }
 
@@ -35,8 +36,12 @@ static uint8_t event(struct state* compState, core_looci_event_t* event){
     int potValue = readADC(0);
 
     // Print the value, for now
-    PRINTF("Potentiometer value = %d\n", potValue);
-    return 1;
+    printf("Potentiometer value = %d\n", potValue);
+
+    // Publish value
+	PUBLISH_EVENT(POTENTIO, potValue, sizeof(int));
+
+    return LC_SUCCESS;
 }
 
 COMP_FUNCS_INIT
