@@ -27,19 +27,12 @@ static uint8_t activate(struct state* compState, void* data){
 }
 
 static uint8_t event(struct state* compState, core_looci_event_t* event){
-
-<<<<<<< HEAD
-=======
-	// Check content of event?
-
->>>>>>> develop
+	printf("event is happening\r\n");
 	DDRE |= 1 << PE7; //Output == 1 op pin 7 van categorie PE, input == 0
 	PORTE |= 1 << PE7; //High == 1, Low == 0
 
     return 1;
 }
-
-
 
 //FUNCTION DECLARATION
 

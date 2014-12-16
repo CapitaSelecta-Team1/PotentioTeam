@@ -8,30 +8,20 @@
 #include "nodebug.h"
 #endif
 
-
 struct state{struct etimer et;};
 
 static bool pressed;
 
-#define LOOCI_COMPONENT_NAME button_component
+#define LOOCI_COMPONENT_NAME pir_component
 #define LOOCI_NR_PROPERTIES 0
 LOOCI_PROPERTIES();
-COMPONENT_INTERFACES(BUTTON_READING);
+COMPONENT_INTERFACES(PIR);
 COMPONENT_NO_RECEPTACLES();
-LOOCI_COMPONENT("Button Component", struct state);
+LOOCI_COMPONENT("Pir Component", struct state);
 
 static uint8_t activate(struct state* compState, void* data){
 
-	printf("Button component activated\r\n");
-
-	//Enable all external interrupts
-    EIMSK = 0xff;
-
-    //Enable listening to all interrupts (on rising edge)
-    EICRA = 0x03;
-
-    // Set pressed to false
-    pressed = false;
+	printf("Pir component activated\r\n");
 
     // Activate timer
     ETIMER_SET(&compState->et, CLOCK_SECOND);
@@ -45,17 +35,12 @@ static uint8_t deactivate(struct state* compState, void* data){
 }
 
 static uint8_t time(struct state* compState, void* data){
-	if(pressed){
-		PUBLISH_EVENT(BUTTON_READING,true, sizeof(bool));
-		pressed = false;
-	}
+
+	// TODO PUBLISH DIGITAL VALUE
+	// PUBLISH_EVENT(PIR,true, sizeof(bool));
+
 	ETIMER_RESET(&compState->et);
 	return 1;
-}
-
-ISR(INT0_vect)
-{
-    pressed = true;
 }
 
 COMP_FUNCS_INIT
