@@ -23,6 +23,7 @@ PRINT_LN("instantiated as: %u",cbid);
  3. Update your channel at line `23`
  4. Specify the image at line `37`
  5. Chance your current directory to `looci2-contiki/build` and run
+ 6. Symlink the changed event-types.h in the `looci2-contiki/build` to the one in our build folder.
 
  ```shell
  make clean; make upload
