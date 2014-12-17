@@ -20,7 +20,7 @@ MY_NODE_ID=55
 # CUSTOM_NODE_MAC=0x02,0x11,0x22,0xff,0xfe,0x33,0x44,0x55 
 
 ## Define here the 802.15.4 wireless channel
-MY_CHANNEL = 23
+MY_CHANNEL = 19
 
 ## Define the event port here. Default will be 5555
 # CONF_EVENT_PORT = 5555
