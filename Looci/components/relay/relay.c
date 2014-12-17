@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "contiki.h"
 #include "looci.h"
 #include "event-types.h"
@@ -25,11 +26,20 @@ static uint8_t activate(struct state* compState, void* data){
 }
 
 static uint8_t event(struct state* compState, core_looci_event_t* event){
-
-	printf("received alarm event\r\n");
-
+	char* payloadAdress = event->payload;
+	int payloadValue = (*payloadAdress);
+	printf("received alarm event payload adress= %d\r\n",payloadAdress);
+	printf("received alarm event payload value= %d\r\n",payloadValue);
+	DDRE |= 0 << PE7;
+	int currentVal = PORTE >> PE7;
+	printf("received alarm event currentVal= %d\r\n",currentVal);
+	int doToggle = 0;
+	if(currentVal != payloadValue){
+		doToggle=1;
+	}
+	printf("received alarm event doToggle= %d\r\n",doToggle);
 	DDRE |= 1 << PE7; //Output == 1 op pin 7 van categorie PE, input == 0
-	PORTE |= 1 << PE7; //High == 1, Low == 0
+	PORTE ^= doToggle << PE7; //High == 1, Low == 0
 
     return 1;
 }
