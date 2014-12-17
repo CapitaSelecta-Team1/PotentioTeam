@@ -1,8 +1,9 @@
-deploy b.jar cccc::b1fa:5b36:a368:4ccc osgi
-instantiate 10 cccc::b1fa:5b36:a368:4ccc
-instantiate 2 dddd::11:22ff:fe33:4402
-wireTo 267 10 cccc::b1fa:5b36:a368:4ccc dddd::11:22ff:fe33:4402
-wireFrom 267 10 cccc::b1fa:5b36:a368:4ccc 11 dddd::11:22ff:fe33:4402
-activate 10 cccc::b1fa:5b36:a368:4ccc
-activate 11 dddd::11:22ff:fe33:4402
-WireFrom 265 13 dddd::11:22ff:fe33:4455 10 cccc::b1fa:5b36:a368:4ccc
+deploy b.jar cccc::91ac:a07b:dabe:b17f osgi
+instantiate 10 cccc::91ac:a07b:dabe:b17f
+instantiate 2 aaaa::11:22ff:fe33:4402
+wireTo 267 10 cccc::91ac:a07b:dabe:b17f aaaa::11:22ff:fe33:4402
+wireFrom 267 10 cccc::91ac:a07b:dabe:b17f 11 aaaa::11:22ff:fe33:4402
+activate 10 cccc::91ac:a07b:dabe:b17f
+activate 11 aaaa::11:22ff:fe33:4402
+WireFrom 265 13 aaaa::11:22ff:fe33:4455 10 cccc::91ac:a07b:dabe:b17f
+wireFrom 266 11 aaaa::11:22ff:fe33:4404 10 cccc::91ac:a07b:dabe:b17f
