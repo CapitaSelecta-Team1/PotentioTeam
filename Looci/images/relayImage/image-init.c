@@ -30,10 +30,6 @@ void doImageInit(){
 	//instantiating component
 	uint8_t cbid = 0 ;
 	looci_cbMan_instantiate_codebase(relay_component_Lc.id,&cbid);
-<<<<<<< HEAD
-	uint8_t success = looci_cbMan_instantiate_codebase(cbid);
-=======
->>>>>>> develop
 	PRINT_LN("instantiated relay as: %u",cbid);
 }
 
